@@ -8,6 +8,9 @@ public class Student implements Comparable<Student> {
     public static final String EMAIL_DOMAIN = "virginia.edu";
 
     public Student(int idNumber, String firstName, String lastName) {
+        if (firstName == null || lastName == null) {
+            throw new IllegalArgumentException("Students names cannot be null when instantiated");
+        }
         this.idNumber = idNumber;
         this.firstName = firstName;
         this.lastName = lastName;
